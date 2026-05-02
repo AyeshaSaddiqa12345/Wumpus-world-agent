@@ -15,7 +15,7 @@ import copy
 import os
 from itertools import combinations
 
-app = Flask(__name__, static_folder=os.path.dirname(os.path.abspath(__file__)))
+app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
 
 # ═══════════════════════════════════════════════════════════════
@@ -550,13 +550,13 @@ def state():
 @app.route("/")
 def serve_index():
     """Serve the frontend HTML."""
-    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), "index.html")
+    return send_from_directory('.', "index.html")
 
 
 @app.route("/<path:filename>")
 def serve_static(filename):
     """Serve static files (CSS, JS)."""
-    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), filename)
+    return send_from_directory('.', filename)
 
 
 # ═══════════════════════════════════════════════════════════════
