@@ -2,7 +2,7 @@
 
 An advanced implementation of the classic AI "Wumpus World" challenge, featuring an autonomous agent that navigates a hazardous grid using **Propositional Logic** and **Resolution Refutation**.
 
-![Wumpus World Demo](https://via.placeholder.com/800x450?text=Wumpus+World+Demo+Placeholder) *(Replace with your recording link)*
+
 
 ## 🚀 Key Features
 
