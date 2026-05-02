@@ -2,6 +2,7 @@
 
 An advanced implementation of the classic AI "Wumpus World" challenge, featuring an autonomous agent that navigates a hazardous grid using **Propositional Logic** and **Resolution Refutation**.
 
+![Wumpus World Demo](https://via.placeholder.com/800x450?text=Wumpus+World+Demo+Placeholder) *(Replace with your recording link)*
 
 ## 🚀 Key Features
 
@@ -32,7 +33,10 @@ The core of this project is the **Resolution Refutation** algorithm. Unlike simp
 
 ## 💻 Local Setup
 
-
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/wumpus-world-ai.git
+   ```
 2. **Install dependencies:**
    ```bash
    pip install flask flask-cors

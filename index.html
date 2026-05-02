@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wumpus World — AI Pathfinding Agent</title>
+  <meta name="description" content="Knowledge-based AI agent navigating Wumpus World using propositional logic and resolution refutation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-glow"></div>
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-icon">🧠</span>
+        <div>
+          <h1>Wumpus World</h1>
+          <p class="subtitle">Knowledge-Based Pathfinding Agent</p>
+        </div>
+      </div>
+      <div class="header-badge"><span class="badge-dot"></span>Propositional Logic &bull; Resolution Refutation</div>
+    </div>
+  </header>
+
+  <main id="app-main">
+    <aside id="sidebar">
+      <section class="panel" id="controls-panel">
+        <h2 class="panel-title"><span class="panel-icon">⚙️</span> Configuration</h2>
+        <div class="input-row">
+          <div class="input-group"><label for="input-rows">Rows</label><input type="number" id="input-rows" value="4" min="3" max="10" /></div>
+          <span class="input-x">×</span>
+          <div class="input-group"><label for="input-cols">Cols</label><input type="number" id="input-cols" value="4" min="3" max="10" /></div>
+        </div>
+        <button id="btn-new-game" class="btn btn-primary"><span>🎲</span> New Game</button>
+        <div class="divider"></div>
+        <div class="control-actions">
+          <button id="btn-step" class="btn btn-accent" disabled><span>👣</span> Step</button>
+          <button id="btn-auto" class="btn btn-glow" disabled><span>▶</span> Auto Run</button>
+        </div>
+        <div class="speed-control">
+          <label for="speed-slider">Speed</label>
+          <input type="range" id="speed-slider" min="100" max="2000" value="600" step="100" />
+          <span id="speed-value">600ms</span>
+        </div>
+      </section>
+
+      <section class="panel" id="metrics-panel">
+        <h2 class="panel-title"><span class="panel-icon">📊</span> Metrics</h2>
+        <div class="metrics-grid">
+          <div class="metric-card"><div class="metric-value" id="metric-inference">0</div><div class="metric-label">Inference Steps</div></div>
+          <div class="metric-card"><div class="metric-value" id="metric-kb">0</div><div class="metric-label">KB Clauses</div></div>
+          <div class="metric-card"><div class="metric-value" id="metric-explored">0</div><div class="metric-label">Cells Explored</div></div>
+          <div class="metric-card"><div class="metric-value" id="metric-total">0</div><div class="metric-label">Total Cells</div></div>
+        </div>
+      </section>
+
+      <section class="panel" id="percepts-panel">
+        <h2 class="panel-title"><span class="panel-icon">👁️</span> Current Percepts</h2>
+        <div class="percept-indicators">
+          <div class="percept-badge" id="percept-breeze"><span class="percept-icon">💨</span><span>Breeze</span></div>
+          <div class="percept-badge" id="percept-stench"><span class="percept-icon">💀</span><span>Stench</span></div>
+        </div>
+      </section>
+
+      <section class="panel" id="legend-panel">
+        <h2 class="panel-title"><span class="panel-icon">🗺️</span> Legend</h2>
+        <div class="legend-items">
+          <div class="legend-item"><span class="legend-swatch agent"></span> Agent</div>
+          <div class="legend-item"><span class="legend-swatch visited"></span> Visited</div>
+          <div class="legend-item"><span class="legend-swatch safe"></span> Proven Safe</div>
+          <div class="legend-item"><span class="legend-swatch unknown"></span> Unknown</div>
+          <div class="legend-item"><span class="legend-swatch danger"></span> Danger</div>
+        </div>
+      </section>
+    </aside>
+
+    <section id="grid-area">
+      <div id="status-bar"><span id="status-icon">🤖</span><span id="status-message">Press "New Game" to begin.</span></div>
+      <div id="grid-container"></div>
+    </section>
+
+    <aside id="log-sidebar">
+      <section class="panel" id="log-panel">
+        <h2 class="panel-title"><span class="panel-icon">📜</span> Move Log</h2>
+        <div id="log-entries"><div class="log-entry log-system">Waiting for game start...</div></div>
+      </section>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
